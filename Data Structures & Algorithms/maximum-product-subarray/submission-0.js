@@ -1,0 +1,19 @@
+class Solution {
+    /**
+     * @param {number[]} nums
+     * @return {number}
+     */
+ maxProduct(nums) {
+  if (nums.length == 1) return nums[0];
+  let max = -Infinity;
+  for (let i = 0; i < nums.length; i++) {
+    let prod = 1;
+    for (let j = i; j < nums.length; j++) {
+      prod *= nums[j];
+      max = Math.max(prod, max);
+    }
+  }
+  return max;
+}
+
+}
